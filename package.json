@@ -1,0 +1,17 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "My Backend Server",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "Taewoo Lee",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/router": "^14.0.0",
+    "koa": "^3.0.1",
+    "nodemon": "^3.1.10"
+  }
+}
