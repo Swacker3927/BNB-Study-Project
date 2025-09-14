@@ -12,6 +12,10 @@ router.get('/bnb', (ctx, next) => {
   ctx.body = 'BNB Get router 연결 확인';
 });
 
+router.post('/bnb', (ctx, next) => {
+  ctx.body = 'BNB Post router 연결 확인';
+});
+
 app.use(router.routes()).use(router.allowedMethods());
 
 app.listen(3000);
