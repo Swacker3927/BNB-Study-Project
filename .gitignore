@@ -3,4 +3,6 @@
 .env
 npm-debug.log
 yarn-error.log
+bun-debug.log
+dist
 .vscode
