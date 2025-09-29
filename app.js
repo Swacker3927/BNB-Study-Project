@@ -4,7 +4,6 @@ const Koa = require('koa');
 const { koaBody } = require('koa-body');
 
 const app = new Koa();
-
 // DB 연결
 require('./plugins/connectSequelize');
 
