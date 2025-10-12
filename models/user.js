@@ -2,18 +2,18 @@ module.exports = (sequelize, DataTypes) => {
 	const user = sequelize.define('user', {
 		firstName: {
 			type: DataTypes.STRING,
-			allowNull: false,
+			allowNull: false
 		},
 		lastName: {
-			type: DataTypes.STRING,
+			type: DataTypes.STRING
 		},
 	}, {
-		freezeTableName: true,
+		freezeTableName: true
 	});
 
-	user.associate = function(models) {
+	user.associate = function (models) {
 		// associations can be defined here
-		console.log('associate', models)
+		console.log('associate', models);
 	};
 	return user;
 };

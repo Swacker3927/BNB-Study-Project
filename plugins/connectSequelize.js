@@ -19,7 +19,7 @@ module.exports = function (modelPath) {
 		define: {
 			timestamps: true
 		},
-		logging: false,
+		logging: false
 	});
 
 	const db = {};

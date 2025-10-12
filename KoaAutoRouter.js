@@ -13,7 +13,7 @@ function autoRoute(router, root, prefix) {
 			if (moduleName == '/index') { // 파일명이 index면 모듈 이름을 지운다.
 				moduleName = '';
 			}
-			// 라우터 경로 => 실제 연결될 파일
+			// 라우터 경로 → 실제 연결될 파일
 			console.log(`${prefix + moduleName || '/'} => ${root}/${p.name}`);
 			const r = require(`.${root}/${p.name}`); // 파일 불러오고
 			router.use(`${prefix}${moduleName}`, r.routes()); // router 미들웨어에 등록

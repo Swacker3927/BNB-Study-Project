@@ -2,7 +2,7 @@ const viewName = 'vw_user';
 const query = `SELECT id, firstName, lastName FROM user`;
 
 module.exports = async (sequelize, DataTypes) => {
-	await sequelize.query(`DROP VIEW IF EXISTS `+ viewName);
+	await sequelize.query(`DROP VIEW IF EXISTS ` + viewName);
 	// await sequelize.query(`ALTER TABLE chatOnline CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci`);
 	await sequelize.query('CREATE VIEW ' + viewName + ' AS ' + query);
 
@@ -12,11 +12,11 @@ module.exports = async (sequelize, DataTypes) => {
 			primaryKey: true
 		},
 		firstName: DataTypes.STRING,
-		lastName: DataTypes.STRING,
+		lastName: DataTypes.STRING
 	}, {
 		tableName: viewName,
-		timestamps: false,
-});
+		timestamps: false
+	});
 
 	return vw_user;
 };
