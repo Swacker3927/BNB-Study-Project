@@ -6,3 +6,5 @@ yarn-error.log
 bun-debug.log
 dist
 .vscode
+*.erd
+/erd
