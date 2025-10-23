@@ -2,7 +2,7 @@ module.exports = (sequelize, DataTypes) => {
 	const files = sequelize.define('files', {
 		userId: {
 			type: DataTypes.INTEGER,
-			allowNull: true,
+			allowNull: true
 		},
 		boardName: {
 			type: DataTypes.STRING,
@@ -22,63 +22,63 @@ module.exports = (sequelize, DataTypes) => {
 		fileName: {
 			type: DataTypes.STRING,
 			allowNull: false,
-			comment: '저장 파일명',
+			comment: '저장 파일명'
 		},
 		displayName: {
 			type: DataTypes.STRING,
 			allowNull: false,
-			comment: '표기 파일명',
+			comment: '표기 파일명'
 		},
 		mimetype: {
 			type: DataTypes.STRING,
-			allowNull: false,
+			allowNull: false
 		},
 		size: {
 			type: DataTypes.INTEGER,
-			allowNull: false,
+			allowNull: false
 		},
 		ex_0: {
 			type: DataTypes.STRING,
-			allowNull: true,
+			allowNull: true
 		},
 		ex_1: {
 			type: DataTypes.STRING,
-			allowNull: true,
+			allowNull: true
 		},
 		ex_2: {
 			type: DataTypes.STRING,
-			allowNull: true,
+			allowNull: true
 		},
 		ex_3: {
 			type: DataTypes.STRING,
-			allowNull: true,
+			allowNull: true
 		},
 		ex_4: {
 			type: DataTypes.STRING,
-			allowNull: true,
+			allowNull: true
 		},
 		ex_5: {
 			type: DataTypes.STRING,
-			allowNull: true,
+			allowNull: true
 		},
 		ex_6: {
 			type: DataTypes.STRING,
-			allowNull: true,
+			allowNull: true
 		},
 		ex_7: {
 			type: DataTypes.STRING,
-			allowNull: true,
+			allowNull: true
 		},
 		ex_8: {
 			type: DataTypes.STRING,
-			allowNull: true,
+			allowNull: true
 		},
 		ex_9: {
 			type: DataTypes.STRING,
-			allowNull: true,
+			allowNull: true
 		},
 	}, {
-		freezeTableName: true,
+		freezeTableName: true
 	});
 	files.associate = function (models) {
 		// associations can be defined here

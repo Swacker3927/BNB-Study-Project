@@ -3,7 +3,6 @@ require('dotenv').config();
 const Koa = require('koa');
 const { koaBody } = require('koa-body');
 
-
 const app = new Koa();
 
 // 전역 라우터 래핑 함수

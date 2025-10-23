@@ -8,24 +8,24 @@ module.exports = (sequelize, DataTypes) => {
 		},
 		name: {
 			type: DataTypes.STRING,
-			allowNull: false,
+			allowNull: false
 		},
 		password: {
 			type: DataTypes.STRING,
-			allowNull: false,
+			allowNull: false
 		},
 		tel: {
 			type: DataTypes.STRING,
-			allowNull: false,
+			allowNull: false
 		},
 		birth: {
 			type: DataTypes.DATEONLY,
-			allowNull: true,
+			allowNull: true
 		},
 		sex: {
 			type: DataTypes.ENUM,
 			values: ['M', 'F'],
-			allowNull: false,
+			allowNull: false
 		},
 		photo: {
 			type: DataTypes.STRING,
