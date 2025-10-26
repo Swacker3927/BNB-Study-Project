@@ -1,8 +1,9 @@
 const Router = require('@koa/router');
 const router = new Router();
+const userCtrl = require('../controller/userCtrl');
 
 router.get('/', (ctx, next) => {
-	// DB에 연결해서 사용자 목록 가져 와서 줘야겠지만!
+	// DB에 연결해서 사용자 목록 가져 와서 줘야 겠지만!
 	ctx.body = {
 		rows: '사용자 목록 배열'
 	};
@@ -17,13 +18,14 @@ router.get('/:id', (ctx, next) => {
 	};
 });
 
-// 회원가입
+// 회원 가입
 router.post('/', $API_CALL(async (ctx, next) => {
 	const payload = ctx.request.body;
 	// console.log(payload)
-	const files = ctx.request.files;
-	// throw new Error("에외 발생")
-	return { payload, files };
+	const { photo } = ctx.request.files;
+	const ip = ctx.ipv4;
+	const data = await userCtrl.join(payload, photo, ip);
+	return data;
 }));
 
 router.put('/:id', (ctx, next) => {

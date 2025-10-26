@@ -27,11 +27,6 @@ module.exports = (sequelize, DataTypes) => {
 			values: ['M', 'F'],
 			allowNull: false
 		},
-		photo: {
-			type: DataTypes.STRING,
-			allowNull: true,
-			comment: '사진 경로'
-		},
 		role: {
 			type: DataTypes.ENUM,
 			values: ['Admin', 'Seller', 'Company', 'User'],
@@ -51,7 +46,7 @@ module.exports = (sequelize, DataTypes) => {
 		connectedIp: {
 			type: DataTypes.STRING,
 			allowNull: true,
-			comment: '로그인시 IP'
+			comment: '로그인 시 IP'
 		}
 	}, {
 		freezeTableName: true
