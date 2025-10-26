@@ -21,7 +21,6 @@ router.get('/:id', (ctx, next) => {
 // 회원 가입
 router.post('/', $API_CALL(async (ctx, next) => {
 	const payload = ctx.request.body;
-	// console.log(payload)
 	const { photo } = ctx.request.files;
 	const ip = ctx.ipv4;
 	const data = await userCtrl.join(payload, photo, ip);
