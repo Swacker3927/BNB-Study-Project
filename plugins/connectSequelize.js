@@ -69,5 +69,7 @@ module.exports = function (modelPath) {
 		})
 	}
 
+	db.sequelize = sequelize;
+	
 	return db;
 }
