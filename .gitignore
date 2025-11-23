@@ -9,3 +9,6 @@ dist
 *.erd
 /erd
 upload
+*.sqlite
+*.sqlite3
+/.ssh
