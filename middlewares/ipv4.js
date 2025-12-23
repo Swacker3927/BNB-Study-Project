@@ -5,7 +5,8 @@ function getIpv4(ip) {
 }
 
 module.exports = async (ctx, next) => {
-	//  ctx.ipv4 = ctx.request.headers['x-forwarded-for'] 는 NginX에서 헤더에 넣은 실제 접속 IP
+	// headers['x-forwarded-for'] 는 NginX에서 해더에 넣은 실제 접속 IP
+	// console.log('conn ip -->',ctx.request.headers['x-forwarded-for'])
 	ctx.ipv4 = ctx.request.headers['x-forwarded-for'] || getIpv4(ctx.ip);
 	await next();
 };
