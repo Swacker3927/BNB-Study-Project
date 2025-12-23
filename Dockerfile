@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y tzdata
 ENV TZ=Asia/Seoul
 
 # 작업 디렉토리
-WORKDIR /app
+WORKDIR /apps
 COPY . .
 # node 의존성 설치
 RUN npm install
