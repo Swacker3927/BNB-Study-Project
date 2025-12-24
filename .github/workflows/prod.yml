@@ -2,7 +2,7 @@ name: Prod distribute
 
 on:
   push:
-    branches: [ prod ]
+    branches: [prod]
 
 jobs:
   build:
@@ -17,7 +17,6 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd cd /home/ubuntu/apps/BNB-Study-Project
+            cd /home/ubuntu/apps/BNB-Study-Project
             git pull
             sudo docker compose up -d --build
-            
