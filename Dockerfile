@@ -7,7 +7,7 @@ ENV TZ=Asia/Seoul
 WORKDIR /apps
 COPY . .
 # node 의존성 설치
-RUN npm install
+RUN npm install -g npm@latest
 # 앱 실행 포트
 EXPOSE 18000
 # 앱 실행
