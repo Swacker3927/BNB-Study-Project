@@ -7,10 +7,12 @@
         "@koa/cors": "^5.0.0",
         "@koa/router": "^15.2.0",
         "bcrypt": "^6.0.0",
-        "dotenv": "^17.2.2",
+        "dotenv": "^17.2.3",
         "koa": "^3.0.1",
         "koa-body": "^6.0.1",
+        "moment": "^2.30.1",
         "mysql2": "^3.15.1",
+        "rand-token": "^1.0.1",
         "sequelize": "^6.37.7"
       }
     }
@@ -433,10 +435,10 @@
       "sha512-rXSP0bf+5n0Qonsb+SVVfNfIsimO4HEtmnIpPHY8Q1UCzKlQrDMfdobr8nJOOsRgWCyMRqeSBQzmWUMq7zvVig=="
     ],
     "dotenv": [
-      "dotenv@17.2.2",
+      "dotenv@17.2.3",
       "",
       {},
-      "sha512-Sf2LSQP+bOlhKWWyhFsn0UsfdK/kCWRv1iuA2gXAwt3dyNabr6QSj00I2V10pidqz69soatm9ZwZvpQMTIOd5Q=="
+      "sha512-JVUnt+DUIzu87TABbhPmNfVdBDt18BLOWjMUFJMSi/Qqg7NTYtabbvSNJGOJ7afbRuv9D/lngizHtP7QyLQ+9w=="
     ],
     "dottie": [
       "dottie@2.0.6",
@@ -879,6 +881,12 @@
         }
       },
       "sha512-YWWTjgABSKcvs/nWBi9PycY/JiPJqOD4JA6o9Sej2AtvSGarXxKC3OQSk4pAarbdQlKAh5D4FCQkJNkW+GAn3w=="
+    ],
+    "rand-token": [
+      "rand-token@1.0.1",
+      "",
+      {},
+      "sha512-Zri5SfJmEzBJ3IexFdigvPSCamslJ7UjLkUn0tlgH7COJvaUr5V7FyUYgKifEMTw7gFO8ZLcWjcU+kq8akipzg=="
     ],
     "raw-body": [
       "raw-body@2.5.2",
