@@ -15,11 +15,14 @@
 		"@koa/router": "^15.2.0",
 		"bcrypt": "^6.0.0",
 		"dotenv": "^17.2.3",
+		"jsonwebtoken": "^9.0.3",
 		"koa": "^3.0.1",
 		"koa-body": "^6.0.1",
 		"moment": "^2.30.1",
 		"mysql2": "^3.15.1",
-		"rand-token": "^1.0.1",
 		"sequelize": "^6.37.7"
+	},
+	"devDependencies": {
+		"rand-token": "^1.0.1"
 	}
 }
