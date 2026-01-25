@@ -48,6 +48,11 @@ app.use(koaBody({
 	json: true
 })); // Koa body parser
 
+
+// 유저정보 가져오기
+const userMid = require('./middlewares/userMid');
+app.use(userMid);
+
 const KoaAutoRouter = require('./KoaAutoRouter');
 KoaAutoRouter(app, '/router', "");
 
