@@ -9,7 +9,17 @@ router.get('/', (ctx, next) => {
 	};
 });
 
+router.get('/find-email', $API_CALL(async (ctx) => {
+	const { name, tel } = ctx.query;
+	const data = await userCtrl.findEmail(name, tel);
+	return data;
+}));
 
+router.get('/find-pw', $API_CALL(async (ctx) => {
+	const { email } = ctx.query;
+	const data = await userCtrl.findPw(email);
+	return data;
+}));
 
 router.get('/:id', (ctx, next) => {
 	const id = ctx.params.id;
@@ -27,6 +37,7 @@ router.get('/overlab/:email', $API_CALL(async (ctx, next) => {
 	return data;
 }));
 
+
 // 회원가입
 router.post('/', $API_CALL(async (ctx, next) => {
 	const payload = ctx.request.body;
@@ -36,12 +47,19 @@ router.post('/', $API_CALL(async (ctx, next) => {
 	return data;
 }));
 
+// 인증
+router.post('/auth', $API_CALL(async (ctx) => {
+	const { token } = ctx.request.body;
+	const user = await userCtrl.auth(token);
+	return user;
+}));
+
 // 로그인
-router.post('/login', $API_CALL(async (ctx)=>{
-	const {email, password} = ctx.request.body;
+router.post('/login', $API_CALL(async (ctx) => {
+	const { email, password } = ctx.request.body;
 	const data = await userCtrl.login(email, password, ctx.ipv4);
 	return data;
-}))
+}));
 
 router.put('/:id', (ctx, next) => {
 	const id = ctx.params.id;

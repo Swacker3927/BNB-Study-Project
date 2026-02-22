@@ -1,6 +1,6 @@
 const pwUtil = require('../../lib/pwUtil');
 const jwtUtil = require('../../lib/jwtUtil');
-// const randToken = require('rand-token');
+const fileUtil = require('../../lib/fileUtil');
 const moment = require('moment');
 
 module.exports = async (email, password, connectedIp) => {
@@ -40,6 +40,15 @@ module.exports = async (email, password, connectedIp) => {
 
 	user.connectedAt = updatePayload.connectedAt;
 	user.connectedIp = connectedIp;
+
+	const photo = await $DB.files.findOne({
+		where: {
+			userEmail: user.email,
+			boardName: 'member',
+			type: 'photo'
+		}
+	});
+	user.photo = fileUtil.getFileUrl(photo);
 
 	return { user, token };
 };

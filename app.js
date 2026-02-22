@@ -9,6 +9,9 @@ const app = new Koa();
 const API_CALL = require('./lib/API_CALL');
 global.$API_CALL = API_CALL;
 
+// 메일발송 전역
+global.$SEND_MAIL = require('./plugins/sendMailer');
+
 // DB 연결
 const connectSequelize = require('./plugins/connectSequelize');
 global.$DB = connectSequelize(__dirname + '/models');
@@ -47,6 +50,11 @@ app.use(koaBody({
 	multipart: true,
 	json: true
 })); // Koa body parser
+
+
+// 유저정보 가져오기
+const userMid = require('./middlewares/userMid');
+app.use(userMid);
 
 const KoaAutoRouter = require('./KoaAutoRouter');
 KoaAutoRouter(app, '/router', "");
