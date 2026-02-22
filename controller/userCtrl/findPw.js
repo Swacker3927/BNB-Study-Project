@@ -19,4 +19,4 @@ module.exports = async (email) => {
 	// }
 
 	return true;
-}
+};

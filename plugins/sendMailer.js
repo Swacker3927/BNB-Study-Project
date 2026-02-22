@@ -21,8 +21,8 @@ const sendMail = async function (to, subject, html) {
 			from: process.env.SMTP_USER,
 			to,
 			subject,
-			html,
-		})
+			html
+		});
 
 		// console.log("----------메일발송 성공")
 		// console.log(info);
@@ -32,6 +32,6 @@ const sendMail = async function (to, subject, html) {
 		console.error(e);
 		return false;
 	}
-}
+};
 
 module.exports = sendMail;
