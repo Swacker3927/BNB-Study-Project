@@ -3,4 +3,6 @@ module.exports = {
 	overlabCheck: require('./overlabCheck'),
 	login: require('./login'),
 	auth: require('./auth'),
+	findEmail: require('./findEmail'),
+	findPw: require('./findPw')
 };
