@@ -11,7 +11,7 @@ module.exports = async (email, tel) => {
 	});
 
 	if (!user) { // 2.없으면 에러
-		throw new Error("존제하지 않는 회원입니다.")
+		throw new Error("존재하지 않는 회원입니다.")
 	}
 
 	// 3. 있으면 난수를 하나 생성해서 DB에 저장 16-32 /find-pw?token=ksjlajklsjflaj&email=test@com
