@@ -68,7 +68,7 @@ router.post('/reset-pw', $API_CALL(async (ctx) => {
 	const payload = ctx.request.body;
 	const data = await userCtrl.resetPw(payload);
 	return data;
-}))
+}));
 
 router.put('/:id', (ctx, next) => {
 	const id = ctx.params.id;
