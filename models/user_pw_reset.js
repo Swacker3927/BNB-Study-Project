@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
 		updatedAt: false,
 		createdAt: false,
 	});
-	user_pw_reset.associate = function(models) {
+	user_pw_reset.associate = function (models) {
 		// associations can be defined here
 	};
 	return user_pw_reset;

@@ -9,7 +9,7 @@ module.exports = async ({ email, token, tempPw, password }) => {
 		where: {
 			expireAt: { [Op.lt]: moment().format('YYYY-MM-DD HH:mm:ss') }
 		}
-	})
+	});
 
 	// 1. email, token, tempPw 하고 expireAt이 현재 시간보다 크면 사용가능한거다.
 	const info = await $DB.user_pw_reset.findOne({
@@ -17,12 +17,12 @@ module.exports = async ({ email, token, tempPw, password }) => {
 			email,
 			token,
 			tempPw,
-			expireAt:{[Op.gte]: moment().format('YYYY-MM-DD HH:mm:ss')}
+			expireAt: { [Op.gte]: moment().format('YYYY-MM-DD HH:mm:ss') }
 		}
-	})
+	});
 
 	if (!info) {
-		throw new Error("초기화 정보가 올바르지 않거나 만료되었습니다.")
+		throw new Error("초기화 정보가 올바르지 않거나 만료되었습니다.");
 	}
 
 	// 한번 읽은건 삭제 합시다.
@@ -30,7 +30,7 @@ module.exports = async ({ email, token, tempPw, password }) => {
 		where: {
 			id: info.id
 		}
-	})
+	});
 
 	// 2. 일치하는 정보가 있으면 password를 hash로 만들고
 	const hash = await pwUtil.hashPassword(password);
@@ -43,4 +43,4 @@ module.exports = async ({ email, token, tempPw, password }) => {
 	});
 
 	return cnt == 1;
-}
+};
