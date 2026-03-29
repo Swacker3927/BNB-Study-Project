@@ -71,15 +71,20 @@ router.post('/reset-pw', $API_CALL(async (ctx) => {
 	return data;
 }))
 
-router.put('/:id', (ctx, next) => {
-	const id = ctx.params.id;
+// 회원정보 수정
+router.put('/:email', $API_CALL(async (ctx, next) => {
+	const email = ctx.params.email;
 	const payload = ctx.request.body;
-	ctx.body = {
-		row: '유저 정보 수정',
-		id,
-		payload,
-	};
-});
+	const { photo } = ctx.request.files;
+
+	if (ctx.user && ctx.user.email == email) {
+		const data = await userCtrl.modify(email, payload, photo);
+		return data;
+	} else {
+		throw new Error("올바른 접근이 아닙니다.")
+	}
+
+}));
 
 router.delete('/:id', (ctx, next) => {
 	const id = ctx.params.id;

@@ -13,7 +13,7 @@ module.exports = async (ctx, next) => {
 		ctx.user = user;
 		ctx.userToken = token;
 	} catch (e) {
-		console.log('UserMid Error', e.message);
+		// console.log(ctx.path, 'UserMid Error', e.message);
 		ctx.user = null;
 		ctx.userToken = null;
 	}
