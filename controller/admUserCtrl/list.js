@@ -11,9 +11,8 @@ module.exports = async (query) => {
 		}
 	}
 
-	const data = await $DB.user.findAndCountAll({
+	const data = await $DB.vw_user.findAndCountAll({
 		where,
-		attributes: { exclude: ['password'] },
 		...sequlelizeHelper.getLimit(query.page, query.rowsPerPage),
 		...sequlelizeHelper.getOder(query.sortBy, query.descending),
 	})
